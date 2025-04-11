@@ -1,1 +1,1 @@
-### Spring Boot Study Note
+### 스프링 부트 야크 털 깎기 하는 저장소
