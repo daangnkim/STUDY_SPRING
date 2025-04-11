@@ -1,0 +1,28 @@
+## JPA vs Hibernate vs Spring Data JPA
+
+- 스프링 부트는 JPA(Java Persistence API)를 이용하여 객체 관계 맵핑(ORM)을 구현
+- JPA는 명세이고, JPA를 구현한 프로바이더들은 여러가지가 있는데, Hibernate는 이중 하나이다.
+- Spring Data JPA는 JPA 위에 존재하는 레이어로, 데이터베이스 작업을 간단하게 만들어주는 도구이다. JPA를 사용하는 경우 CRUD가 아래처럼 단순해진다.
+
+```java
+// Spring Data JPA 사용 예제
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+    // 기본 CRUD 메소드는 자동으로 제공됨
+
+    // 다음과 같이 메소드 이름만으로 쿼리 생성 가능
+    List<User> findByUsername(String username);
+    User findByEmail(String email);
+
+    // @Query 어노테이션으로 직접 JPQL 작성 가능
+    @Query("SELECT u FROM User u WHERE u.email LIKE %:domain%")
+    List<User> findByEmailDomain(@Param("domain") String domain);
+}
+```
+
+[Hibernate Relations, Cascade Types, Fetch Types and Orphan Removal | by Berat Yesbek | Medium](https://beratyesbek.medium.com/hibernate-relations-cascade-types-fetch-types-and-orphan-removal-ad9681758843)
+
+[java - What's the difference between Hibernate and Spring Data JPA - Stack Overflow](https://stackoverflow.com/questions/23862994/whats-the-difference-between-hibernate-and-spring-data-jpa)
