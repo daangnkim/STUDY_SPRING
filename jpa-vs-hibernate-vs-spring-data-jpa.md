@@ -1,8 +1,9 @@
 ## JPA vs Hibernate vs Spring Data JPA
 
-- 스프링 부트는 JPA(Java Persistence API)를 이용하여 객체 관계 맵핑(ORM)을 구현
-- JPA는 명세이고, JPA를 구현한 프로바이더들은 여러가지가 있는데, Hibernate는 이중 하나이다.
-- Spring Data JPA는 JPA 위에 존재하는 레이어로, 데이터베이스 작업을 간단하게 만들어주는 도구이다. JPA를 사용하는 경우 CRUD가 아래처럼 단순해진다.
+- Spring Boot는 `JPA(Java Persistence API)`를 이용하여 `객체 관계 맵핑(ORM)`을 구현
+- JPA는 명세이고, JPA를 구현한 프로바이더들은 여러가지가 있는데, `Hibernate`는 이중 하나이다.
+- `Spring Data`는 relational 혹은 non-relational 데이터베이스와의 인터랙션을 쉽게 만드는 프레임워크이다.
+- `Spring Data JPA`는 JPA 위에 존재하는 레이어로(그러니까 `Hibernate`에 추가 추상화 계층을 제공하는 레이어로), 데이터베이스 작업을 간단하게 만들어주는 도구이다. JPA를 사용하는 경우 CRUD가 아래처럼 단순해진다.
 
 ```java
 // Spring Data JPA 사용 예제
@@ -26,3 +27,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
 [Hibernate Relations, Cascade Types, Fetch Types and Orphan Removal | by Berat Yesbek | Medium](https://beratyesbek.medium.com/hibernate-relations-cascade-types-fetch-types-and-orphan-removal-ad9681758843)
 
 [java - What's the difference between Hibernate and Spring Data JPA - Stack Overflow](https://stackoverflow.com/questions/23862994/whats-the-difference-between-hibernate-and-spring-data-jpa)
+
+[Introduction to the Spring Data Framework | GeeksforGeeks](https://www.geeksforgeeks.org/introduction-to-the-spring-data-framework/)
+
+[Difference between JPA and Spring Data JPA | GeeksforGeeks](https://www.geeksforgeeks.org/difference-between-jpa-and-spring-data-jpa/)
