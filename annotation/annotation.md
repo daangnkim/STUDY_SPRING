@@ -36,3 +36,27 @@
 @Email은 EmailValidator와 연결된다. EmailValidator는 값을 가져와서 pattern matching을 실행한다. null인경우 validation을 건너띄기 때문에 필요에 따라 @NotNull이 존재해야한다.
 
 [How Spring Boot Handles Validation Annotations | Medium](https://medium.com/@AlexanderObregon/how-spring-boot-handles-validation-annotations-33b987c1a5cb)
+
+## @CreationTimestamp vs @CreatedDate
+
+@CreatedDate는 Spring Data Annotation으로, Spring이 지원하는 모든 저장소(JPA, JDBC, R2DBC, MongoDB, Cassandra)에서 사용이 가능하다.
+
+@CreationTimestamp는 Hibernate Annotation으로, Hibernate에서만 사용이 가능하다.
+
+[What's the difference between @CreationTimestamp and @CreatedDate in Spring boot jpa? - Stack Overflow](https://stackoverflow.com/questions/66149224/whats-the-difference-between-creationtimestamp-and-createddate-in-spring-boot)
+
+## @Entity vs @Table
+
+`@Entity`는 자바 클래스를 Entity로 만든다. Entity는 관계형 데이터 베이스에서 테이블을 나타낸다. JPA에게 Entity 클래스의 인스턴스는 데이터베이스 테이블의 row에 매핑됨을 말하는 것이다.
+
+`@Table`은 Entity가 데이터베이스의 어떤 테이블에 매핑돼야하는지 명시하기 위한 용도이다. `@Entity`와 함께 쓰인다.
+
+클래스가 ORM 동작을 수행하게 만들려면 `@Entity`이 필수이다.
+
+[@table vs @entity in Spring boot. In Spring Boot (and generally in Spring… | by Meet2sudhakar | Medium](https://medium.com/@meet2sudhakar/table-vs-entity-in-spring-boot-a84e092976fd)
+
+## @AllArgsConstructor vs @RequiredArgsConstructor vs @NoArgsConstructor
+
+![](image-1.png)
+
+[Difference Between Lombok @AllArgsConstructor, @RequiredArgsConstructor and @NoArgConstructor | Baeldung](https://www.baeldung.com/java-lombok-constructor-annotations-comparison)
